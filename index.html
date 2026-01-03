@@ -6,61 +6,49 @@
     <title>Tailoré | Bold Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* --- PALET BLACK PINK WHITE --- */
         :root {
             --hitam: #000000;
             --putih: #ffffff;
-            --pink-neon: #ff477e; /* Pink yang lebih 'nendang' */
+            --pink-neon: #ff477e;
             --pink-soft: #ffeef2;
             --abu: #f4f4f4;
         }
 
-        /* RESET */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background-color: var(--abu); color: var(--hitam); line-height: 1.6; }
 
-        /* HEADER: Hitam Pekat */
         header { background: var(--hitam); color: var(--putih); padding: 1.5rem 0; text-align: center; margin-bottom: 2rem; border-bottom: 4px solid var(--pink-neon); }
         header h1 { font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 2rem; }
         header span { color: var(--pink-neon); }
 
-        /* CONTAINER */
         .container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
 
-        /* CARD: Putih dengan Border Hitam Tegas */
-        .card { background: var(--putih); border: 2px solid var(--hitam); border-radius: 0; /* Kotak tajam biar edgy */ padding: 2rem; box-shadow: 6px 6px 0px var(--hitam); /* Shadow kasar ala retro */ margin-bottom: 2rem; }
+        .card { background: var(--putih); border: 2px solid var(--hitam); border-radius: 0; padding: 2rem; box-shadow: 6px 6px 0px var(--hitam); margin-bottom: 2rem; }
         .card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--hitam); border-bottom: 2px solid var(--hitam); padding-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; }
 
-        /* INPUTS */
         .form-group { margin-bottom: 1.2rem; }
         label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
         input, select { width: 100%; padding: 1rem; border: 2px solid var(--hitam); background: var(--putih); font-size: 1rem; font-weight: 600; transition: 0.2s; border-radius: 0; }
         input:focus, select:focus { outline: none; border-color: var(--pink-neon); background: var(--pink-soft); }
 
-        /* PRICE BOX */
         .price-box { background: var(--hitam); color: var(--putih); padding: 1.5rem; text-align: right; margin: 1.5rem 0; border: 2px solid var(--hitam); }
         .price-label { font-size: 0.9rem; color: var(--pink-neon); text-transform: uppercase; letter-spacing: 1px; }
         .price-value { font-size: 2rem; font-weight: 800; }
 
-        /* BUTTONS: Hitam -> Pink */
         button { width: 100%; padding: 1.2rem; background: var(--hitam); color: var(--putih); border: none; font-size: 1.1rem; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: 0.2s; position: relative; top: 0; }
         button:hover { background: var(--pink-neon); color: var(--putih); top: -4px; box-shadow: 0 4px 0 #990033; }
         
-        /* Refresh Button */
         .btn-refresh { background: var(--putih); color: var(--hitam); border: 2px solid var(--hitam); width: auto; padding: 0.5rem 1.5rem; font-size: 0.8rem; box-shadow: 4px 4px 0 var(--hitam); margin-bottom: 1rem; }
         .btn-refresh:hover { background: var(--pink-neon); color: var(--putih); box-shadow: 2px 2px 0 var(--hitam); top: 2px; }
 
-        /* TABLE */
         .table-responsive { overflow-x: auto; border: 2px solid var(--hitam); }
         table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
         th { background: var(--hitam); color: var(--putih); padding: 1rem; text-align: left; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         td { padding: 1rem; border-bottom: 1px solid #ddd; background: var(--putih); font-weight: 600; }
         tr:nth-child(even) td { background: var(--pink-soft); } /* Selang seling pink muda */
         
-        /* Status Badge */
         .status-badge { background: var(--hitam); color: var(--pink-neon); padding: 5px 10px; font-size: 0.7rem; text-transform: uppercase; font-weight: bold; border: 1px solid var(--pink-neon); }
 
-        /* FOOTER */
         footer { text-align: center; padding: 2rem; color: var(--hitam); font-weight: 600; font-size: 0.8rem; opacity: 0.6; }
     </style>
 </head>
@@ -129,11 +117,10 @@
     </div>
 
     <footer>
-        &copy; 2026 TAILORÉ PROJECT.
+        &copy; UAS TST TAILORÉ. Flori Ver.
     </footer>
 
     <script>
-        // --- LOGIC (TIDAK BERUBAH) ---
         const API_URL = '/api/orders'; 
         const SECRET_KEY = 'rahasia123';
 

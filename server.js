@@ -7,24 +7,20 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// --- SETTING TAMPILAN WEB ---
 app.use(express.static(path.join(__dirname, '.')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// --- BAGIAN DATABASE ---
 const db = new sqlite3.Database('./orders.db', (err) => {
     if (err) console.error(err.message);
     else console.log('Koneksi ke SQLite berhasil.');
 });
 
-// Bikin tabel orders kalau belum ada
 db.run(`CREATE TABLE IF NOT EXISTS orders (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     customer_name TEXT,
@@ -35,9 +31,7 @@ db.run(`CREATE TABLE IF NOT EXISTS orders (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )`);
 
-// --- BAGIAN AUTHENTICATION ---
 const simpleAuth = (req, res, next) => {
-    // Kunci rahasia sederhana
     if (req.headers['x-secret-key'] === 'rahasia123') {
         next();
     } else {
@@ -45,9 +39,6 @@ const simpleAuth = (req, res, next) => {
     }
 };
 
-// --- BAGIAN API ENDPOINTS ---
-
-// [POST] Buat Order Baru
 app.post('/api/orders', simpleAuth, (req, res) => {
     const { customer_name, product_id, quantity, total_price } = req.body;
     
@@ -69,7 +60,6 @@ app.post('/api/orders', simpleAuth, (req, res) => {
     });
 });
 
-// [GET] Lihat Semua Order
 app.get('/api/orders', simpleAuth, (req, res) => {
     db.all("SELECT * FROM orders ORDER BY created_at DESC", [], (err, rows) => {
         if (err) return res.status(400).json({ error: err.message });
@@ -77,7 +67,6 @@ app.get('/api/orders', simpleAuth, (req, res) => {
     });
 });
 
-// Jalankan Server
 app.listen(PORT, () => {
     console.log(`Server jalan di http://localhost:${PORT}`);
 });
