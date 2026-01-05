@@ -7,6 +7,8 @@ Layanan mikroservice untuk manajemen transaksi dan penjualan dalam sistem e-comm
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
+[Tailoré Order Service - Web Deploy](https://cimol.queenifyofficial.site/)
+
 ## 📋 Deskripsi
 
 **Tailoré Order Service** adalah layanan backend yang bertanggung jawab untuk:
